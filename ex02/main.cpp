@@ -6,20 +6,18 @@ int main()
 	{
         // Test the Array class
         Array<int> intArray(5);
+        Array<int> copyArray(intArray);
         for (unsigned int i = 0; i < intArray.size(); ++i)
 		{
             intArray[i] = i * 2;
     	}
-        // Copy constructor test
-        Array<int> copyArray(intArray);
-        // Assignment operator test
         Array<int> assignArray = intArray;
-        // Displaying elements
         for (unsigned int i = 0; i < intArray.size() + 1 ; ++i)
 		{
-            std::cout << "intArray[" << i << "]: " << intArray[i] << "\t";
-            std::cout << "copyArray[" << i << "]: " << copyArray[i] << "\t";
+            std::cout << "intArray[" << i << "]: " << intArray[i] << std::endl;
+            std::cout << "copyArray[" << i << "]: " << copyArray[i] << std::endl;
             std::cout << "assignArray[" << i << "]: " << assignArray[i] << std::endl;
+			std::cout << "---------------------------------------" << std::endl;
         }
     }
 	catch (const std::exception& e)

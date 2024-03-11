@@ -20,24 +20,24 @@ class Array
             	elements[i] = T();
         	}
     	}
-		Array(const Array& other) : arraySize(other.arraySize)
+		Array(const Array& src) : arraySize(src.arraySize)
 		{
         	elements = new T[arraySize];
         	for (unsigned int i = 0; i < arraySize; ++i)
 			{
-            	elements[i] = other.elements[i];
+            	elements[i] = src.elements[i];
         	}
     	}
-    	Array& operator=(const Array& other)
+    	Array& operator=(const Array& src)
 		{
-        	if (this != &other) 
+        	if (this != &src) 
 			{
             	delete[] elements;
-            	arraySize = other.arraySize;
+            	arraySize = src.arraySize;
             	elements = new T[arraySize];
             	for (unsigned int i = 0; i < arraySize; ++i)
 				{
-                	elements[i] = other.elements[i];
+                	elements[i] = src.elements[i];
             	}
         	}
         	return *this;
